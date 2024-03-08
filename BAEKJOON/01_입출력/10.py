@@ -17,6 +17,7 @@ d = input()
 
 B = list(map(int,d))
 I,J,K = c * B[-1], c * B[-2], c * B[-3]
+
 print(I)
 print(J)
 print(K)
