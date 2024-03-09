@@ -9,4 +9,4 @@ elif(70 <= score <= 79):
 elif(60 <= score <= 69):
     print("D")
 else:
-    print("F")
+    print("F") 
