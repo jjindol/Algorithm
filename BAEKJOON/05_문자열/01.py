@@ -1,4 +1,4 @@
 s = input()
 i = int(input())
 
-print(list(s)[i-1])
+print(list(s)[i-1]) 
