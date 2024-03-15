@@ -5,4 +5,4 @@ if (M >= 45):
 elif (H > 0 and M < 45):
     print(H-1, M+15)
 elif (H == 0 and M < 45):
-    print(23, M+15) 
+    print(23, M+15)
