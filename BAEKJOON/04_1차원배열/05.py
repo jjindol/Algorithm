@@ -9,6 +9,3 @@ for _ in range(m):
     num[i-1:j] = [k] * (j-i+1)
 
 print(*num)
-
-
-# 확인!!
