@@ -1,4 +1,4 @@
-word = list(input())
+word = list(input()) 
 
 if word == list(reversed(word)):
     print(1)
