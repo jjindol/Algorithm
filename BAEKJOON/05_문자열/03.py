@@ -1,4 +1,4 @@
-t = int(input())
+t = int(input()) 
 
 for i in range(t):
     x = input()
