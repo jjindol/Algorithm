@@ -1,12 +1,9 @@
 t = int(input())
 
 for _ in range(t):
-    r, j = list(input().split())
-    for i in range(0,i):
-        print(j[i]*r)
-        
-    
+    r,s = map(str, input().split())
+    r = int(r)
 
-
-
-
+    for x in s:
+        print(x * r, end="")
+    print()
