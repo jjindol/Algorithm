@@ -1,5 +1,5 @@
 students = []
-for i in range(1,31):
+for i in range(30):
     students.append(i)
 
 for _ in range(28):
