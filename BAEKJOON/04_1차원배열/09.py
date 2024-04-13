@@ -1,5 +1,4 @@
 import sys
-
 num = []
 n,m = map(int, input().split())
 
