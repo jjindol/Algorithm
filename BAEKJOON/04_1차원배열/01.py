@@ -1,8 +1,5 @@
 n = int(input())
-my_list = list(map(int, input().split()[:n]))
-
+num = list(map(int, input().split()))
 v = int(input())
 
-count = my_list.count(v)
-
-print(count)
+print(num.count(v))
