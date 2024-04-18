@@ -7,6 +7,6 @@ for x in score:
 
 M = max(num)
 for i in range(n):
-    num[i] = int(score[i])/M*100
+    num[i] = int(score[i]) / M*100
     
 print(sum(num)/n)
