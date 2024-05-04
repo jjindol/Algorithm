@@ -8,4 +8,3 @@ while(True):
         print("multiple")
     elif (x%y != 0 or y%x!=0):
         print("neither")
-    
