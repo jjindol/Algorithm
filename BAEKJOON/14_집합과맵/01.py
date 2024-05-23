@@ -1,22 +1,24 @@
 #풀이1
-import sys
-input = sys.stdin.readline
+s = set()
+lst = []
 
 n = int(input())
-my_card = set(map(int, input().split()))
+s.update(map(int, input().split()))
 m = int(input())
-card = list(map(int, input().split()))
+lst = list(map(int, input().split()))
 
-for x in range(m):
-    if card[x] in my_card:
-        print(1, end=' ')
-    else:
-        print(0, end=' ')
+for i in range(len(lst)):
+    if lst[i] in s:
+        lst[i] = 1
+    elif lst[i] not in s:
+        lst[i] = 0
+print(*lst)
 
 
-'''
-풀이2
+
+#풀이2
 import sys
+input = sys.stdin.readline
 
 def binary_search(array, check, start, end):
     while start <= end:
@@ -29,9 +31,6 @@ def binary_search(array, check, start, end):
             start = mid + 1
     return False
 
-#풀이3
-input = sys.stdin.readline
-
 N = int(input())
 your_card = sorted(list(map(int, input().rstrip().split())))
 
@@ -43,4 +42,3 @@ for num in compare_card:
         print(1, end=' ')
     else:
         print(0, end=' ')
-'''
