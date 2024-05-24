@@ -14,6 +14,7 @@ for _ in range(n):
 for person in sorted(s, reverse=True):
     print(person)
 
+
 #풀이2
 import sys
 input = sys.stdin.readline
