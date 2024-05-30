@@ -1,6 +1,5 @@
 #풀이1
 s = set()
-lst = []
 
 n = int(input())
 s.update(map(int, input().split()))
