@@ -6,7 +6,7 @@ directions = {'E':2, 'S':0, 'W':1, 'N':3}
 
 def func():
     x,y = 0,0
-    cnt = 0
+    time = 0
 
     for _ in range(n):
         a,b = input().split()
@@ -19,12 +19,12 @@ def func():
             if nx==0 and ny==0:
                 print(nx,ny)
                 cnt += 1
-                return cnt
+                return time
             
             else:
                 x,y = nx,ny
                 print(nx,ny)
-                cnt += 1          
+                time += 1          
 
     return -1
 
