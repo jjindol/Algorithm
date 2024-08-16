@@ -44,5 +44,3 @@ def bfs(x,y):
 
 #bfs 수행결과 출력
 print(bfs(0,0))
-
-135
