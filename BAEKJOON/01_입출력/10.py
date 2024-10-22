@@ -1,24 +1,11 @@
-#풀이1
 a = int(input())
-b = int(input())
+b = input()
 
-b_hundreds = (b // 100)
-b_tens = ((b % 100) // 10)
-b_ones = (b % 10)
+x = int(b[2]) * a
+y = int(b[1]) * a
+z = int(b[0]) * a
 
-print(a * b_ones)
-print(a * b_tens)
-print(a * b_hundreds)
-print(a*b)
-
-# 풀이2
-c = int(input())
-d = input()
-
-B = list(map(int,d))
-I,J,K = c * B[2], c * B[1], c * B[0]
-
-print(I)
-print(J)
-print(K)
-print(c * int(d))
+print(x)
+print(y)
+print(z)
+print(a*int(b))
