@@ -1,11 +1,10 @@
-import sys
-
-n,m = map(int, sys.stdin.readline().split())
-num = [0] * n
-print(num)
+n,m = map(int, input().split())
+lst = [0] * (n+1)
 
 for _ in range(m):
-    i,j,k = map(int, sys.stdin.readline().split())
-    num[i-1:j] = [k] * (j-i+1)
-
-print(*num)
+    x,y,z= map(int,input().split())
+    for i in range(x,y+1):
+        lst[i] = z
+        
+for i in range(1,n+1):
+    print(lst[i], end=' ')
