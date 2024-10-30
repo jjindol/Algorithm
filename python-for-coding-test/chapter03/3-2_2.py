@@ -1,15 +1,10 @@
-n, m, k = map(int, input().split())
-data = list(map(int, input().split()))
+n,m,k = map(int, input().split())
+arr = list(map(int, input().split()))
 
-data.sort()
-first = data[n-1]
-second = data[n-2]
+arr.sort()
+max_num = arr[-1]
+next_num = arr[-2]
+tmp = m//(k+1)
 
-count = (m // (k+1)) * k
-count += m % (k+1)
-
-result = 0
-result += count * first
-result += (m - count) * second
-
-print(result)
+answer = max_num*(m-tmp) + next_num*tmp
+print(answer)
