@@ -1,9 +1,8 @@
-n, m = map(int, input().split())
-lst = []
+n,m = map(int,input().split())
 
-for _ in range(n):
-    row = list(map(int, input().split()))
-    
-    M = min(row)
-    lst.append(M)
+lst = []
+for i in range(n):
+    arr = list(map(int, input().split()))
+    lst.append(min(arr))
+
 print(max(lst))
