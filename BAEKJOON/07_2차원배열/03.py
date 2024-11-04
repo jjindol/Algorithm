@@ -1,10 +1,12 @@
 arr = []
+length = []
 
 for _ in range(5):
-    a = input()
-    arr.append(a)
-
-for i in range(max(len(word) for word in arr)):
+    word = input()
+    arr.append(word)
+    length.append(len(word))
+    
+for i in range(max(length)):
     for j in range(5):
         if i < len(arr[j]):
-            print(arr[j][i], end="")
+            print(arr[j][i], end='')
