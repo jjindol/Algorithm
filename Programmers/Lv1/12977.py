@@ -26,5 +26,3 @@ def isPrime(x):
         if x % i == 0:
             return False
     return True
-
-print(solution([1,2,7,6,4]))
