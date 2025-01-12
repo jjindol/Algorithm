@@ -6,10 +6,8 @@ visited = [[False] * m for _ in range(n)]
 dx, dy = [1, 0, -1, 0], [0, 1, 0, -1]
 cnt = 0
 
-
 def can_go(x, y):
-    return 0 <= x < n and 0 <= y < m
-
+    return 0 <= x < n and 0 <= y < m and not visited[x][y] and graph[x][y] != 'X'
 
 def bfs(x, y):
     global cnt
@@ -26,7 +24,7 @@ def bfs(x, y):
         for i in range(4):
             nx, ny = x + dx[i], y + dy[i]
 
-            if can_go(nx, ny) and not visited[nx][ny] and graph[nx][ny] != 'X':
+            if can_go(nx, ny):
                 q.append((nx, ny))
                 visited[nx][ny] = True
 
