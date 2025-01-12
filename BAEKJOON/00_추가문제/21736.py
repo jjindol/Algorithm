@@ -1,43 +1,40 @@
-import sys
 from collections import deque
-input = sys.stdin.readline
 
 n, m = map(int, input().split())
+graph = [list(map(str, input())) for _ in range(n)]
+visited = [[False] * m for _ in range(n)]
+dx, dy = [1, 0, -1, 0], [0, 1, 0, -1]
+cnt = 0
 
-graph = []
-for i in range(n):
-    graph.append(list(input().rstrip()))
 
-visited = [[False]*m for i in range(n)]
+def can_go(x, y):
+    return 0 <= x < n and 0 <= y < m
 
-num = 0
-def bfs(x,y):
-    global num
+
+def bfs(x, y):
+    global cnt
     q = deque()
-    q.append((x,y))
-    
+    q.append((x, y))
+    visited[x][y] = True
+
     while q:
-        x,y = q.popleft()
+        x, y = q.popleft()
+
         if graph[x][y] == 'P':
-            num += 1
-        graph[x][y] = 'X'
+            cnt += 1
 
-        dx = [-1,1,0,0]
-        dy = [0,0,-1,1]
         for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
+            nx, ny = x + dx[i], y + dy[i]
 
-            if 0<=nx<n and 0<=ny<m and graph[nx][ny]!='X':
-                q.append((nx,ny))
+            if can_go(nx, ny) and not visited[nx][ny] and graph[nx][ny] != 'X':
+                q.append((nx, ny))
+                visited[nx][ny] = True
+
 
 for i in range(n):
     for j in range(m):
         if graph[i][j] == 'I' and not visited[i][j]:
-            bfs(i,j)
+            bfs(i, j)
             break
 
-if num > 0:
-    print(num)
-else:
-    print('TT')
+print(cnt) if cnt > 0 else print('TT')
