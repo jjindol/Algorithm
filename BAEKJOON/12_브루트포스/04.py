@@ -1,18 +1,24 @@
-#풀이1
-a,b,c,d,e,f = map(int, input().split())
+n,m = map(int, input().split())
+arr = [input().strip() for _ in range(n)]
 
-x = (c*e-b*f)//(a*e-b*d)
-y = (c*d-a*f)//(b*d-a*e)
+answer_B = ['BWBWBWBW','WBWBWBWB','BWBWBWBW','WBWBWBWB','BWBWBWBW','WBWBWBWB','BWBWBWBW','WBWBWBWB']
+answer_W = ['WBWBWBWB','BWBWBWBW','WBWBWBWB','BWBWBWBW','WBWBWBWB','BWBWBWBW','WBWBWBWB','BWBWBWBW']
 
-print(x,y)
+def func(graph):
+    cnt1,cnt2 = 0,0
 
-#풀이2
-import sys
-a,b,c,d,e,f = map(int, input().split())
-input = sys.stdin.readline
+    for i in range(8):
+        for j in range(8):
+            if graph[i][j] != answer_B[i][j]:
+                cnt1 += 1
+            if graph[i][j] != answer_W[i][j]:
+                cnt2 += 1
+    return min(cnt1,cnt2)
 
-for x in range(-999,1000):
-    for y in range(-999,1000):
-        if a*x + b*y ==c and d*x + e*y ==f:
-            print(x,y)
-            break
+result = 2500
+for i in range(n-7):
+    for j in range(m-7):
+        new = [row[j:j+8] for row in arr[i:i+8]]
+        result = min(result, func(new))
+
+print(result)
